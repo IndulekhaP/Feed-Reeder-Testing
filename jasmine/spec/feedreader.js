@@ -39,7 +39,7 @@ $(function() {
          * hidden by default.
          */
         it('is hidden by default', function(){
-            expect($('body').attr('class')).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
          /* Test that ensures the menu changes
@@ -87,11 +87,10 @@ $(function() {
          beforeEach(function(done){
              loadFeed(0, function(){
                  firstFeed = $('.feed').html();
-                 done();
-             });
-             loadFeed(1, function(){
-                 secondFeed = $('.feed').html();
-                 done();
+                 loadFeed(1, function(){
+                     secondFeed = $('.feed').html();
+                     done();
+                 });
              });
          });
          it('changes the content', function(done){
