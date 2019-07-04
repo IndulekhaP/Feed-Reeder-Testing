@@ -50,11 +50,12 @@ $(function() {
         it('changes visibility when the menu icon is clicked', function(){
             // Click once
             menuIcon.trigger("click");
-            expect($('body').attr('class')).toBe('');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+
 
             // Click again
             menuIcon.trigger("click");
-            expect($('body').hasClass('menu-hidden').toBe(true);
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
